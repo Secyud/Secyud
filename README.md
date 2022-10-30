@@ -1,6 +1,6 @@
 - 👋 Hi, I’m @Secyud
-- 👀 I’m interested in game framework, back end.
-- 🌱 I’m currently learning abp framework, blazor, c++ for Unreal Engine.
+- 👀 I’m interested in game framework.
+- 🌱 I’m currently learning abp, Unity3D, Unreal Engine.
 
 <!---
 Secyud/Secyud is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
