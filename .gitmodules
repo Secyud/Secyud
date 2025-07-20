@@ -1,0 +1,3 @@
+[submodule "secits"]
+	path = secits
+	url = git@github.com:Secyud/Secits.git
