@@ -1,0 +1,19 @@
+<Project>
+
+    <PropertyGroup Condition="'$(TargetFramework)' == 'net6.0'">
+        <DotnetVersion>6.*</DotnetVersion>
+    </PropertyGroup>
+
+    <PropertyGroup Condition="'$(TargetFramework)' == 'net7.0'">
+        <DotnetVersion>7.*</DotnetVersion>
+    </PropertyGroup>
+
+    <PropertyGroup Condition="'$(TargetFramework)' == 'net8.0'">
+        <DotnetVersion>8.*</DotnetVersion>
+    </PropertyGroup>
+
+    <PropertyGroup Condition="'$(TargetFramework)' == 'net9.0'">
+        <DotnetVersion>9.*</DotnetVersion>
+    </PropertyGroup>
+    
+</Project>

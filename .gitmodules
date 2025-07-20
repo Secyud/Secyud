@@ -1,3 +1,12 @@
 [submodule "secits"]
 	path = secits
 	url = git@github.com:Secyud/Secits.git
+[submodule "dragert"]
+	path = dragert
+	url = git@github.com:Secyud/Dragert.git
+[submodule "utils"]
+	path = utils
+	url = git@github.com:Secyud/Utils.git
+[submodule "abp"]
+	path = abp
+	url = git@github.com:Secyud/Abp.git
