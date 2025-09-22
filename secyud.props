@@ -1,5 +1,5 @@
 <Project>
-    
+
     <PropertyGroup>
         <Nullable>enable</Nullable>
         <ImplicitUsings>true</ImplicitUsings>
@@ -7,34 +7,21 @@
         <Company>Secyud</Company>
         <Authors>LaoTu</Authors>
         <Copyright>Copyright (c) Secyud 2025</Copyright>
-        <PackageOutputPath>F:\Library\nuget</PackageOutputPath>
+        <PackageOutputPath>./nuget</PackageOutputPath>
         <PackageId>$(AssemblyName)</PackageId>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     </PropertyGroup>
-
-    <PropertyGroup Condition="'$(TargetFramework)' == 'net6.0'">
-        <DotnetVersion>6.*</DotnetVersion>
+    <PropertyGroup>
+        <WarningsAsErrors>Nullable</WarningsAsErrors>
     </PropertyGroup>
 
-    <PropertyGroup Condition="'$(TargetFramework)' == 'net7.0'">
-        <DotnetVersion>7.*</DotnetVersion>
-    </PropertyGroup>
-
-    <PropertyGroup Condition="'$(TargetFramework)' == 'net8.0'">
-        <DotnetVersion>8.*</DotnetVersion>
-    </PropertyGroup>
-
-    <PropertyGroup Condition="'$(TargetFramework)' == 'net9.0'">
-        <DotnetVersion>9.*</DotnetVersion>
-    </PropertyGroup>
-    
     <ItemGroup>
-        <Compile Remove="Logs\**" />
-        <Content Remove="Logs\**" />
-        <EmbeddedResource Remove="Logs\**" />
-        <None Remove="Logs\**" />
-        <Content Remove="appsettings\**" />
-        <None Include="appsettings\**" />
+        <Compile Remove="Logs\**"/>
+        <Content Remove="Logs\**"/>
+        <EmbeddedResource Remove="Logs\**"/>
+        <None Remove="Logs\**"/>
+        <Content Remove="appsettings\**"/>
+        <None Include="appsettings\**"/>
     </ItemGroup>
-    
+
 </Project>
