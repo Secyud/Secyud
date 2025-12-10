@@ -1,5 +1,6 @@
 <Project>
 
+    <Import Project="./configureawait.props"/>
     <PropertyGroup>
         <Nullable>enable</Nullable>
         <ImplicitUsings>true</ImplicitUsings>
@@ -9,7 +10,6 @@
         <Copyright>Copyright (c) Secyud 2025</Copyright>
         <PackageOutputPath>./nuget</PackageOutputPath>
         <PackageId>$(AssemblyName)</PackageId>
-        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     </PropertyGroup>
     <PropertyGroup>
         <WarningsAsErrors>Nullable</WarningsAsErrors>
@@ -23,5 +23,15 @@
         <Content Remove="appsettings\**"/>
         <None Include="appsettings\**"/>
     </ItemGroup>
+
+    <PropertyGroup Condition="'$(IsApp)' == ''">
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <TargetFrameworks>net9.0;net10.0</TargetFrameworks>
+    </PropertyGroup>
+
+    <PropertyGroup Condition="'$(IsApp)' == 'true'">
+        <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+        <TargetFramework>net10.0</TargetFramework>
+    </PropertyGroup>
 
 </Project>

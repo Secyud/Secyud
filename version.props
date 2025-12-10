@@ -6,13 +6,20 @@
         <TestVersion>17.*</TestVersion>
         <SecitVersion>1.0.0-*</SecitVersion>
     </PropertyGroup>
-    
+
     <PropertyGroup Condition="'$(TargetFramework)' == 'net8.0'">
         <DotnetVersion>8.*</DotnetVersion>
+        <AbpVersion>8.3.4</AbpVersion>
     </PropertyGroup>
 
     <PropertyGroup Condition="'$(TargetFramework)' == 'net9.0'">
-        <DotnetVersion>9.*</DotnetVersion>
+        <DotnetVersion>9.0.11</DotnetVersion>
+        <AbpVersion>9.3.6</AbpVersion>
+    </PropertyGroup>
+
+    <PropertyGroup Condition="'$(TargetFramework)' == 'net10.0'">
+        <DotnetVersion>10.0.0</DotnetVersion>
+        <AbpVersion>10.0.1</AbpVersion>
     </PropertyGroup>
 
 </Project>
