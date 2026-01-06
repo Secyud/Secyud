@@ -1,6 +1,5 @@
 <Project>
-
-    <Import Project="./configureawait.props"/>
+    <Import Project="../reference.props"/>
     <PropertyGroup>
         <Nullable>enable</Nullable>
         <ImplicitUsings>true</ImplicitUsings>
@@ -10,9 +9,53 @@
         <Copyright>Copyright (c) Secyud 2025</Copyright>
         <PackageOutputPath>./nuget</PackageOutputPath>
         <PackageId>$(AssemblyName)</PackageId>
-    </PropertyGroup>
-    <PropertyGroup>
         <WarningsAsErrors>Nullable</WarningsAsErrors>
+        <ReferenceType>Project</ReferenceType>
+        <SecitVersion>1.0.0</SecitVersion>
+        <UtilsVersion>1.0.0</UtilsVersion>
+    </PropertyGroup>
+
+    <PropertyGroup Condition="'$(ProjectInfo)' == ''">
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <TargetFrameworks>net10.0</TargetFrameworks>
+    </PropertyGroup>
+
+    <PropertyGroup Condition="'$(ProjectInfo)' == 'SourceGenerator'">
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <EnforceExtendedAnalyzerRules>true</EnforceExtendedAnalyzerRules>
+        <TargetFramework>netstandard2.0</TargetFramework>
+    </PropertyGroup>
+
+    <PropertyGroup Condition="'$(ProjectInfo)' == 'Standard'">
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <TargetFrameworks>netstandard2.0;netstandard2.1;net10.0</TargetFrameworks>
+    </PropertyGroup>
+
+    <PropertyGroup Condition="'$(ProjectInfo)' == 'App'">
+        <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+        <TargetFramework>net10.0</TargetFramework>
+    </PropertyGroup>
+
+    <PropertyGroup Condition="'$(ProjectInfo)' == 'Wpf'">
+        <OutputType>WinExe</OutputType>
+        <UseWPF>true</UseWPF>
+        <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+        <TargetFramework>net10.0-windows</TargetFramework>
+    </PropertyGroup>
+
+    <PropertyGroup Condition="$(TargetFramework.StartsWith('net10.0'))">
+        <AbpVersion>10.0.1</AbpVersion>
+        <DotnetVersion>10.0.1</DotnetVersion>
+    </PropertyGroup>
+
+    <PropertyGroup Condition="$(TargetFramework.StartsWith('netstandard2.0'))">
+        <AbpVersion>10.0.1</AbpVersion>
+        <DotnetVersion>10.0.1</DotnetVersion>
+    </PropertyGroup>
+
+    <PropertyGroup Condition="$(TargetFramework.StartsWith('netstandard2.1'))">
+        <AbpVersion>10.0.1</AbpVersion>
+        <DotnetVersion>10.0.1</DotnetVersion>
     </PropertyGroup>
 
     <ItemGroup>
@@ -24,14 +67,19 @@
         <None Include="appsettings\**"/>
     </ItemGroup>
 
-    <PropertyGroup Condition="'$(IsApp)' == ''">
-        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-        <TargetFrameworks>net9.0;net10.0</TargetFrameworks>
-    </PropertyGroup>
+    <ItemGroup Condition="'$(ProjectInfo)' == 'SourceGenerator'">
+        <PackageReference Include="Microsoft.CodeAnalysis.Analyzers">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+        <PackageReference Include="Microsoft.CodeAnalysis.CSharp"/>
+    </ItemGroup>
 
-    <PropertyGroup Condition="'$(IsApp)' == 'true'">
-        <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
-        <TargetFramework>net10.0</TargetFramework>
-    </PropertyGroup>
-
+    <ItemGroup Condition="'$(Configuration)' == 'Release'">
+        <PackageReference Include="ConfigureAwait.Fody" PrivateAssets="All"/>
+        <PackageReference Include="Fody">
+            <PrivateAssets>All</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+        </PackageReference>
+    </ItemGroup>
 </Project>

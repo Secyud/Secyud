@@ -1,0 +1,78 @@
+<Project>
+    <PropertyGroup>
+        <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
+        <CentralPackageFloatingVersionsEnabled>true</CentralPackageFloatingVersionsEnabled>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageVersion Version="$(AbpVersion)" Include="Volo.Abp.AspNetCore.Mvc"/>
+        <PackageVersion Version="$(AbpVersion)" Include="Volo.Abp.AspNetCore.Bundling"/>
+        <PackageVersion Version="$(AbpVersion)" Include="Volo.Abp.AspNetCore.Components.Server"/>
+        <PackageVersion Version="$(AbpVersion)" Include="Volo.Abp.AspNetCore.Components.Web"/>
+        <PackageVersion Version="$(AbpVersion)" Include="Volo.Abp.AspNetCore.Components.WebAssembly"/>
+        <PackageVersion Version="$(AbpVersion)" Include="Volo.Abp.AspNetCore.Mvc.UI.Bundling.Abstractions"/>
+        <PackageVersion Version="$(AbpVersion)" Include="Volo.Abp.Authorization"/>
+        <PackageVersion Version="$(AbpVersion)" Include="Volo.Abp.Autofac"/>
+        <PackageVersion Version="$(AbpVersion)" Include="Volo.Abp.AutoMapper"/>
+        <PackageVersion Version="$(AbpVersion)" Include="Volo.Abp.Caching"/>
+        <PackageVersion Version="$(AbpVersion)" Include="Volo.Abp.Ddd.Application"/>
+        <PackageVersion Version="$(AbpVersion)" Include="Volo.Abp.Ddd.Application.Contracts"/>
+        <PackageVersion Version="$(AbpVersion)" Include="Volo.Abp.Ddd.Domain"/>
+        <PackageVersion Version="$(AbpVersion)" Include="Volo.Abp.Ddd.Domain.Shared"/>
+        <PackageVersion Version="$(AbpVersion)" Include="Volo.Abp.EntityFrameworkCore"/>
+        <PackageVersion Version="$(AbpVersion)" Include="Volo.Abp.EntityFrameworkCore.Sqlite"/>
+        <PackageVersion Version="$(AbpVersion)" Include="Volo.Abp.Features"/>
+        <PackageVersion Version="$(AbpVersion)" Include="Volo.Abp.GlobalFeatures"/>
+        <PackageVersion Version="$(AbpVersion)" Include="Volo.Abp.Guids"/>
+        <PackageVersion Version="$(AbpVersion)" Include="Volo.Abp.Http.Client"/>
+        <PackageVersion Version="$(AbpVersion)" Include="Volo.Abp.Json"/>
+        <PackageVersion Version="$(AbpVersion)" Include="Volo.Abp.Localization"/>
+        <PackageVersion Version="$(AbpVersion)" Include="Volo.Abp.Minify"/>
+        <PackageVersion Version="$(AbpVersion)" Include="Volo.Abp.MultiTenancy"/>
+        <PackageVersion Version="$(AbpVersion)" Include="Volo.Abp.MultiTenancy.Abstractions"/>
+        <PackageVersion Version="$(AbpVersion)" Include="Volo.Abp.Security"/>
+        <PackageVersion Version="$(AbpVersion)" Include="Volo.Abp.TestBase"/>
+        <PackageVersion Version="$(AbpVersion)" Include="Volo.Abp.UI"/>
+        <PackageVersion Version="$(AbpVersion)" Include="Volo.Abp.Validation"/>
+        <PackageVersion Version="$(AbpVersion)" Include="Volo.Abp.VirtualFileSystem"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageVersion Version="$(UtilsVersion)" Include="Secyud.DemoUtils"/>
+
+
+        <PackageVersion Version="$(SecitVersion)" Include="Secyud.Secits.Blazor"/>
+        <PackageVersion Version="$(SecitVersion)" Include="Secyud.Secits.Blazor.Preset"/>
+
+        <PackageVersion Version="8.6.4" Include="Polly"/>
+
+
+        <PackageVersion Version="3.11.0" Include="Microsoft.CodeAnalysis.Analyzers"/>
+        <PackageVersion Version="5.0.0" Include="Microsoft.CodeAnalysis.CSharp"/>
+        <PackageVersion Version="17.12.0" Include="Microsoft.NET.Test.Sdk"/>
+
+        <PackageVersion Version="4.3.0" Include="Serilog"/>
+
+        <PackageVersion Version="6.0.4" Include="coverlet.collector"/>
+        <PackageVersion Version="2.9.3" Include="xunit.extensibility.execution"/>
+        <PackageVersion Version="3.0.1" Include="xunit.runner.visualstudio"/>
+        <PackageVersion Version="2.9.3" Include="xunit"/>
+        <PackageVersion Version="4.2.1" Include="Shouldly"/>
+        <PackageVersion Version="1.0.17" Include="NSubstitute.Analyzers.CSharp"/>
+        <PackageVersion Version="5.3.0" Include="NSubstitute"/>
+
+        <PackageVersion Version="$(DotnetVersion)" Include="Microsoft.EntityFrameworkCore.InMemory"/>
+        <PackageVersion Version="$(DotnetVersion)" Include="Microsoft.EntityFrameworkCore.Proxies"/>
+        <PackageVersion Version="$(DotnetVersion)" Include="Microsoft.AspNetCore.Authorization"/>
+
+        <PackageVersion Version="$(DotnetVersion)" Include="Microsoft.AspNetCore.Components.Web"/>
+        <PackageVersion Version="$(DotnetVersion)" Include="Microsoft.AspNetCore.Components.WebAssembly"/>
+        <PackageVersion Version="$(DotnetVersion)" Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer"/>
+
+
+        <PackageVersion Version="$(DotnetVersion)" Include="Microsoft.EntityFrameworkCore"/>
+        <PackageVersion Version="$(DotnetVersion)" Include="Microsoft.EntityFrameworkCore.Relational"/>
+        <PackageVersion Version="$(DotnetVersion)" Include="Microsoft.EntityFrameworkCore.SqlServer"/>
+        <PackageVersion Version="$(DotnetVersion)" Include="Microsoft.Extensions.FileProviders.Embedded"/>
+    </ItemGroup>
+</Project>
